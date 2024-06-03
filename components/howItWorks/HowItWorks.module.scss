@@ -1,0 +1,99 @@
+@import "@/styles/imports";
+
+.section {
+	@include flex(space-between, center);
+	.details {
+		width: 52rem;
+		.image {
+			position: relative;
+			width: 100%;
+			height: 29.6rem;
+			margin-top: 4rem;
+		}
+	}
+	.card_container {
+		width: 52rem;
+		.card {
+			@include flex();
+			flex-wrap: nowrap;
+			gap: 2rem;
+			margin-bottom: 3.2rem;
+			.card_button {
+				background-color: #ffe7b5;
+				border-radius: 0.6rem;
+				height: 3.6rem;
+				width: 3.6rem;
+				flex-shrink: 0;
+				@extend %center;
+				p {
+					@extend %text-16;
+					color: #1b1e21;
+				}
+			}
+		}
+	}
+	.text {
+		max-width: 48rem;
+		h3 {
+			font-family: $font-good;
+			@extend %text-20;
+			margin-bottom: 1.6rem;
+			font-weight: 700;
+		}
+		h6 {
+			background: $orange-grad;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			margin-bottom: 1.6rem;
+			font-weight: 700;
+		}
+		p {
+			color: #4b525a;
+		}
+	}
+	.button {
+		@include flex(flex-start, center);
+		gap: 0.8rem;
+		flex-shrink: 0;
+		.arrow {
+			position: relative;
+			width: 1.6rem;
+			height: 1.6rem;
+		}
+	}
+	@include screenMax("tablet") {
+		.card_container {
+			width: 50rem;
+			margin-top: 5rem;
+		}
+		.details {
+			width: 40rem;
+		}
+	}
+	@include screenMax("mobile") {
+		gap: 4rem;
+		.details {
+			.image {
+				width: 100%;
+				height: 22rem;
+			}
+		}
+		.card_container {
+			margin-top: 0;
+			.card {
+				flex-wrap: nowrap;
+				margin-bottom: 2.4rem;
+			}
+		}
+		.button {
+			width: 100%;
+			justify-content: center;
+		}
+		.text {
+			max-width: 100%;
+			h3 {
+				margin-bottom: 0.8rem;
+			}
+		}
+	}
+}

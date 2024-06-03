@@ -1,0 +1,61 @@
+@import "@/styles/imports";
+
+.section {
+	width: 100vw;
+	min-height: 68rem;
+	position: relative;
+	background-color: #060606;
+	left: 0;
+	padding: 14.4rem 8rem 6.8rem;
+	display: grid;
+	place-items: center;
+	background-image: url("../../public/images/background-hero.png");
+	.center {
+		z-index: 2;
+		position: relative;
+		width: 100%;
+		@extend %center;
+	}
+	.text,
+	.description {
+		max-width: 97rem;
+		color: $col-white;
+		text-align: center;
+		h1,
+		span {
+			@extend %title-56;
+			font-family: $font-good;
+		}
+		p {
+			@extend %text-18;
+			color: #f0f0f1;
+		}
+	}
+	.description {
+		margin-top: 0.8rem;
+		max-width: 66rem;
+	}
+	.sub {
+		margin-top: 4rem;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		inset: 0;
+		background-color: rgba(6, 6, 6, 0.78);
+	}
+	@include screenMax("mobile") {
+		padding: 8rem 1.7rem 6.5rem;
+		.text,
+		.description {
+			max-width: 100%;
+			h1 {
+				font-size: 2.8rem;
+				line-height: 3.6rem;
+			}
+		}
+	}
+}

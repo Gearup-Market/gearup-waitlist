@@ -1,0 +1,30 @@
+@import "@/styles/imports";
+
+.container {
+	@include flex(flex-start, center, nowrap);
+	gap: 1.6rem;
+	position: relative;
+	.button {
+		@include flex(flex-start, center);
+		gap: 0.8rem;
+		flex-shrink: 0;
+		.arrow {
+			position: relative;
+			width: 1.6rem;
+			height: 1.6rem;
+		}
+	}
+	.input {
+		width: 55.4rem;
+	}
+	@include screenMax("mobile") {
+		flex-wrap: wrap;
+		.input {
+			width: 100%;
+		}
+		.button {
+			width: 100%;
+			justify-content: center;
+		}
+	}
+}

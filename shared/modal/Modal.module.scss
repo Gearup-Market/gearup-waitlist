@@ -1,0 +1,117 @@
+@import "@/styles/imports";
+
+.modal_container {
+	position: fixed;
+	z-index: 20;
+	inset: 0;
+	width: 100vw;
+	height: 100dvh;
+	overflow-y: hidden;
+	background-color: rgba(#1b1e2180, 0.5);
+	cursor: default;
+	@include flex(center, center, column);
+	.modal {
+		width: 71.1rem;
+		background-color: #fff;
+		border-radius: 1.6rem;
+		padding: 5.3rem 8.2rem;
+		position: relative;
+		z-index: 1;
+		.header {
+			margin-bottom: 2.4rem;
+			.closeModal_container {
+				position: absolute;
+				// top: 2rem;
+				right: 4rem;
+				top: 2.4rem;
+				// background-color: $col-primary-lighten1;
+				width: 2.4rem;
+				height: 2.4rem;
+				@extend %center;
+				.closeModal {
+					min-width: auto;
+					min-height: auto;
+					width: 1.4rem;
+					height: 1.4rem;
+					position: relative;
+					transition: all 0.3s linear;
+					cursor: pointer;
+					span {
+						height: 1.4rem;
+						width: 0.2rem;
+						border-radius: 25%;
+						background-color: #4b525a;
+						transform: rotate(45deg);
+						display: block;
+						// position: absolute;
+						// left: 0;
+						padding: 0;
+						margin-left: 0.4rem;
+					}
+					span:last-child {
+						transform: rotate(-45deg);
+						margin-top: -1.4rem;
+						// left: 1rem;
+					}
+				}
+			}
+		}
+		.body {
+			width: 100%;
+			@extend %center;
+			.image {
+				position: relative;
+				width: 12rem;
+				height: 12rem;
+				margin-bottom: 3.2rem;
+			}
+			.text {
+				text-align: center;
+				margin-bottom: 4rem;
+				h3 {
+					font-weight: 700;
+					@extend %title-24;
+					color: #1b1e21;
+					margin-bottom: 0.8rem;
+				}
+				p {
+					@extend %text-16;
+					color: #4b525a;
+				}
+			}
+			.row {
+				@include grid(repeat(2, 4.8rem), 2.4rem, 3.2rem);
+				place-content: center;
+				width: 33.6rem;
+				.icon {
+					position: relative;
+					width: 4.8rem;
+					height: 4.8rem;
+					overflow: hidden;
+					border-radius: 50%;
+					margin-bottom: 1.2rem;
+				}
+			}
+		}
+	}
+	@include screenMax("mobile") {
+		.modal {
+			width: 90%;
+			padding: 0;
+			padding-inline: 1.8rem;
+			padding-block: 5rem 4rem;
+			.body {
+				.image {
+					width: 10rem;
+					height: 10rem;
+				}
+				.row {
+					width: 100%;
+					.icon {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}

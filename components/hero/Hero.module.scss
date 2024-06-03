@@ -1,0 +1,94 @@
+@import "@/styles/imports";
+
+.hero {
+	width: 100vw;
+	min-height: 100dvh;
+	position: relative;
+	background-color: #060606;
+	left: 0;
+	padding: 14.4rem 8rem 6.8rem;
+	display: grid;
+	place-items: center;
+	background-image: url("https://res.cloudinary.com/deu08sc8y/image/upload/v1709133096/gear-up/background-hero.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	.center {
+		z-index: 2;
+		position: relative;
+		width: 100%;
+		@extend %center;
+		.alert {
+			@include flex(flex-start, center);
+			gap: 0.8rem;
+			margin-bottom: 2.4rem;
+			.alert_cta {
+				background-color: #ffe7b5;
+				padding: 0.2rem 0.8rem;
+				border-radius: 10rem;
+				p {
+					@extend %text-12;
+					font-weight: 700;
+				}
+			}
+			.rocket {
+				position: relative;
+				width: 3.2rem;
+				height: 3.2rem;
+			}
+		}
+	}
+	.cta_text {
+		@include flex(center);
+		div {
+			@extend %title-56;
+			font-family: $font-good;
+			background: $orange-grad;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			text-align: center;
+		}
+	}
+	.text,
+	.description {
+		max-width: 97rem;
+		color: $col-white;
+		text-align: center;
+		h1,
+		span {
+			@extend %title-56;
+			font-family: $font-good;
+		}
+		span {
+			background: $orange-grad;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+		p {
+			@extend %text-18;
+			color: #f0f0f1;
+		}
+	}
+	.description {
+		margin-top: 0.8rem;
+		max-width: 66rem;
+	}
+	.sub {
+		margin-top: 4rem;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		inset: 0;
+		background-color: rgba(6, 6, 6, 0.78);
+	}
+	@include screenMax("mobile") {
+		padding: 8rem 1.7rem 6.5rem;
+		.text,
+		.description {
+			max-width: 100%;
+		}
+	}
+}

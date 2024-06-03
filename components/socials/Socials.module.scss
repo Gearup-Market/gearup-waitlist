@@ -1,0 +1,65 @@
+@import "@/styles/imports";
+
+.section {
+	@extend %center;
+	.title {
+		max-width: 63.4rem;
+		margin-bottom: 6.4rem;
+		text-align: center;
+	}
+	.row {
+		@include grid(repeat(2, 23.6rem), 2.4rem, 3.2rem);
+		place-content: center;
+		width: 100%;
+		.card {
+			width: 100%;
+			@extend %center;
+			padding: 2.4rem 2.3rem 3.2rem;
+			background-color: #fafafa;
+			border-radius: 0.8rem;
+			.icon {
+				position: relative;
+				width: 4.8rem;
+				height: 4.8rem;
+				overflow: hidden;
+				border-radius: 50%;
+				margin-bottom: 1.2rem;
+			}
+			.small_title {
+				text-align: center;
+				h3 {
+					@extend %text-20;
+					text-transform: capitalize;
+					font-weight: 700;
+					margin-bottom: 0.8rem;
+				}
+				p {
+					@extend %text-14;
+					color: #4b525a;
+				}
+			}
+			.link {
+				padding: 1.2rem 5.7rem;
+				border: 0.1rem solid #ffb30f;
+				border-radius: 10rem;
+				margin-top: 2.4rem;
+			}
+		}
+	}
+	@include screenMax("tablet") {
+		.title {
+			margin-bottom: 5rem;
+		}
+		.row {
+			grid-template-columns: repeat(2, 4.8rem);
+			.card {
+				background-color: transparent;
+				padding: 0;
+				.small_title,
+				.link {
+					display: none;
+				}
+			}
+		}
+	}
+}
